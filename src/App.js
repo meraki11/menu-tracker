@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Container } from 'react-bootstrap/';
+import NavbarDisplay from "./Components/NavbarDisplay";
+import Home from "./Components/Home";
+import Meals from "./Components/Meals";
+import Ideas from "./Components/Ideas";
+import Footer from "./Components/Footer";
 import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid>
+      <Router>
+        <NavbarDisplay />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/meals" component={Meals} />
+            <Route path="/ideas" component={Ideas} />
+            <Route path="*" component={NotFound} />
+          </Switch>
+        <Footer />
+      </Router>
+    </Container>    
   );
 }
 
-export default App;
+function NotFound () {
+  return <>You stumbled into a page that does not exist in this time stream</>;
+}
