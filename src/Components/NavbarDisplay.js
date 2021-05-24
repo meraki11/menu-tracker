@@ -18,8 +18,8 @@ export default function NavbarDisplay () {
                     <LinkContainer to="/meals">
                         <Nav.Link>Meals</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer to="/ideas">
-                        <Nav.Link>Ideas</Nav.Link>
+                    <LinkContainer to="/journal">
+                        <Nav.Link>Journal</Nav.Link>
                     </LinkContainer>
                 </Nav>
                 <Form inline>

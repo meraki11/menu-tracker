@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap/';
 import NavbarDisplay from "./Components/NavbarDisplay";
 import Home from "./Components/Home";
 import Meals from "./Components/Meals";
-import Ideas from "./Components/Ideas";
+import Journal from "./Components/Journal";
 import Footer from "./Components/Footer";
 import './App.css';
 
@@ -16,7 +16,7 @@ export default function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/meals" component={Meals} />
-            <Route path="/ideas" component={Ideas} />
+            <Route path="/journal" component={Journal} />
             <Route path="*" component={NotFound} />
           </Switch>
         <Footer />

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
-// const mealComponents = mealsData.map(item => <Meal key={item.id} meal={item}/>)
 
 export default class MenuForm extends Component {
     state = {
@@ -33,7 +32,7 @@ export default class MenuForm extends Component {
     
     addMeal = () => {
         let meals = [...this.state.meals];
-        meals.push(this.state.currentMeal, this.state.currentMealNote);
+        meals.push(this.state.currentMeal);
         this.setState({ meals, currentMeal: ""});
     };
 
@@ -67,17 +66,10 @@ export default class MenuForm extends Component {
                         <Form.Control
                             onChange={event => this.setState({ currentMeal: event.target.value})}
                             value={this.state.currentMeal}
-                            type="text"
+                            type="textarea"
+                            rows={"5"}
                             name="mealName"
                             placeholder="Meal Name"
-                        />
-                        <Form.Control
-                            onChange={event => this.setState({ currentMealNote: event.target.value})}
-                            value={this.state.currentMeal.note}
-                            type="textarea"
-                            rows={3}
-                            name="mealNote"
-                            placeholder="Note"
                         />
                         <Button onClick={this.addMeal} variant="secondary">Add Meal</Button>
                     </Form.Group>
@@ -90,7 +82,6 @@ export default class MenuForm extends Component {
                                 <div className="meal">
                                     <div className="meal-content">
                                         <div className="meal-text">{meal}</div>
-                                        <div className="meal-note">{meal.note}</div>
                                         <button onClick={() => this.setMealEditing(index)}>Edit</button>
                                     </div>
                                     <button onClick={() => this.deleteMeal(index)}>Delete</button>
@@ -102,11 +93,6 @@ export default class MenuForm extends Component {
                                         type="text"
                                         value={this.state.currentEdit}
                                         onChange={event => this.editMeal(event)}
-                                        />
-                                        <input
-                                            type="textarea"
-                                            value={this.state.currentEdit}
-                                            onChange={event => this.editMeal(event)}
                                         />
                                         <button onClick={() => this.submitEdit(index)}>Done</button>
                                     </div>
