@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Button, Container, Row, Col, Image } from 'react-bootstrap';
 
 export default class Ideas extends Component {
   state = {
@@ -43,7 +43,7 @@ export default class Ideas extends Component {
     this.setState({ notes });
   };
 
-  //called when edit button is clicked beside note
+  //called when edit Button is clicked beside note
   setNoteEditing = index => {
     this.setState({ noteEditing: index, currentEdit: this.state.notes[index] });
   };
@@ -63,46 +63,51 @@ export default class Ideas extends Component {
 
   render() {
     return (
-      <div className="Notes">
-        <h1>Food Journal</h1>
-        <textarea 
-          onChange={event => this.setState({ currentNote: event.target.value })}
-          value={this.state.currentNote}
-          className="input" 
-          placeholder="Notes" 
-        />
-        <br/>
-        <button className="button" onClick={this.addNote}>Submit</button>
-        <div>
-          {this.state.notes.map((note, index) => (
-              <div className="notes" key={index}>
-                {this.state.noteEditing === null ||
-                this.state.noteEditing !== index ? (
-                  <div className="note">
-                    <div className="note-content">
-                      <div className="note-text">{note}</div>
-                      <button onClick={() => this.setNoteEditing(index)}>Edit</button>
+      <Container fluid style={{background:"#886839"}}>
+        
+        <Row>
+        <div className="journal-form">
+          <h1>Food Journal</h1>
+          <textarea 
+            onChange={event => this.setState({ currentNote: event.target.value })}
+            value={this.state.currentNote}
+            className="input" 
+            placeholder="Notes" 
+          />
+          <br/>
+          <Button className="Button" onClick={this.addNote} variant="secondary">Submit</Button>
+          <div>
+            {this.state.notes.map((note, index) => (
+                <div className="journal-entry" key={index}>
+                  {this.state.noteEditing === null ||
+                  this.state.noteEditing !== index ? (
+                    <div className="note">
+                      <div className="note-content">
+                        <div className="note-text">{note}</div>
+                        <Button onClick={() => this.setNoteEditing(index)} variant="success">Edit</Button>
+                      </div>
+                      <Button onClick={() =>this.deleteNote(index)} variant="warning">Delete</Button>
                     </div>
-                    <button onClick={() =>this.deleteNote(index)}>Delete</button>
-                  </div>
-                ) : (
-                  <div className="note">
-                    <div className="note-content">
-                      <input
-                        type="text"
-                        value={this.state.currentEdit}
-                        onChange={event => this.editNote(event)}
-                      />
-                      <button onClick={() => this.submitEdit(index)}>Done</button>
+                  ) : (
+                    <div className="note">
+                      <div className="note-content">
+                        <input
+                          type="text"
+                          value={this.state.currentEdit}
+                          onChange={event => this.editNote(event)}
+                        />
+                        <Button onClick={() => this.submitEdit(index)} variant="success">Done</Button>
+                      </div>
+                      <Button onClick={() =>this.deleteNote(index)} variant="warning">Delete</Button>
                     </div>
-                    <button onClick={() =>this.deleteNote(index)}>Delete</button>
-                  </div>
-                )}
-              </div>
-            ))
-          }
+                  )}
+                </div>
+              ))
+            }
+          </div>
         </div>
-      </div>
+      </Row>
+      </Container>
     );
   }  
 }

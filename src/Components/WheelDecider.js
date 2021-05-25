@@ -1,5 +1,6 @@
 import React from 'react';
 import './WheelDecider.css';
+import { Button } from 'react-bootstrap';
 
 export default class WheelDecider extends React.Component {
   state = {
@@ -59,7 +60,7 @@ export default class WheelDecider extends React.Component {
             <div className="text">12</div>
           </li>
         </ul>
-        <button className="spin-button" onClick={this.startRotation}>SPIN</button>
+        <Button className="spin-button" onClick={this.startRotation}>SPIN</Button>
       </div>
     )
   }

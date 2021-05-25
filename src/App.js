@@ -10,11 +10,11 @@ import './App.css';
 
 export default function App() {
   return (
-    <Container fluid>
+    <Container fluid >
       <Router>
         <NavbarDisplay />
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Home}  />
             <Route path="/meals" component={Meals} />
             <Route path="/journal" component={Journal} />
             <Route path="*" component={NotFound} />

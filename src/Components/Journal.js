@@ -1,28 +1,23 @@
 import React, { Component } from 'react';
 import Ideas from './Ideas';
-import { Container, Row, Col } from 'react-bootstrap/';
+import { Container, Row, Col, Image } from 'react-bootstrap/';
 import CalendarView from './CalendarView';
 
 export default class Journal extends Component {
-    constructor(props) {
-        super(props);
-    } 
     render() {
         return (
             <>
                 <Container fluid>
                     <Row>
-                        <Col lg={4}>
-                            <CalendarView />
-                        </Col>
-                        <Col lg={4}>
+                        <Col lg={9}>
                             <Ideas />
+                        </Col>
+                        <Col lg={3} style={{background: '#886839', justifyContent: 'center'}}>
+                            <CalendarView />
                         </Col>
                     </Row>
                 </Container>
-                
-                
             </>
         );
-    }
+    }s
 }

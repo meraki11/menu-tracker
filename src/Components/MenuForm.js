@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Container, Row, Col, Image } from 'react-bootstrap';
 
 export default class MenuForm extends Component {
     state = {
@@ -59,50 +59,74 @@ export default class MenuForm extends Component {
     
     render() {
         return (
-            <div>
-                <Form>
-                    <Form.Group>
-                        <Form.Label>Meal Idea: </Form.Label>
-                        <Form.Control
-                            onChange={event => this.setState({ currentMeal: event.target.value})}
-                            value={this.state.currentMeal}
-                            type="textarea"
-                            rows={"5"}
-                            name="mealName"
-                            placeholder="Meal Name"
-                        />
-                        <Button onClick={this.addMeal} variant="secondary">Add Meal</Button>
-                    </Form.Group>
-                </Form>
-                <div>
-                    {this.state.meals.map((meal, index) => (
-                        <div className="meals" key={index}>
-                            {this.state.mealEditing === null ||
-                            this.state.mealEditing !== index ? (
-                                <div className="meal">
-                                    <div className="meal-content">
-                                        <div className="meal-text">{meal}</div>
-                                        <button onClick={() => this.setMealEditing(index)}>Edit</button>
+            <Container fluid style={{background:"#E4B455"}}>
+                
+                <br/>
+                <Row>
+                    <Col lg={3}>
+                        <Form className="meal-form">
+                            <Form.Group>
+                                <Form.Label>Meal Idea: </Form.Label>
+                                <Form.Control
+                                    onChange={event => this.setState({ currentMeal: event.target.value})}
+                                    value={this.state.currentMeal}
+                                    as="textarea"
+                                    rows={10}
+                                    name="mealName"
+                                    placeholder="Meal Details Here"
+                                />
+                                <Button onClick={this.addMeal} variant="secondary" block>Add Meal</Button>
+                            </Form.Group>
+                        </Form>
+                        <br />
+                    </Col>
+                    <Col lg={9} className="meals-layout">
+                        {this.state.meals.map((meal, index) => (
+                            <div className="meals" key={index}>
+                                {this.state.mealEditing === null ||
+                                this.state.mealEditing !== index ? (
+                                    <div className="meal">
+                                        <div className="meal-content">
+                                            <div className="meal-text">{meal}</div>
+                                            <Button className="meal-edit" variant="success" 
+                                                onClick={() => this.setMealEditing(index)}>Edit</Button>
+                                        </div>
+                                        <br/>
+                                        <Button className="meal-delete" variant="warning"
+                                            onClick={() => this.deleteMeal(index)}>Delete</Button>
                                     </div>
-                                    <button onClick={() => this.deleteMeal(index)}>Delete</button>
-                                </div>
-                            ) : (
-                               <div className="meal">
-                                    <div className="meal-content">
-                                       <input
-                                        type="text"
-                                        value={this.state.currentEdit}
-                                        onChange={event => this.editMeal(event)}
-                                        />
-                                        <button onClick={() => this.submitEdit(index)}>Done</button>
-                                    </div>
-                                    <button onClick={() => this.deleteMeal(index)}>Delete</button>
-                                </div> 
-                            )}
-                        </div>                    
-                    ))}
-                </div>
-            </div>
+                                ) : (
+                                    <form className="meal">
+                                            <div className="meal-content">
+                                                <textarea
+                                                    value={this.state.currentEdit}
+                                                    onChange={event => this.editMeal(event)}
+                                                />
+                                                <Button className="meal-edit" variant="success" 
+                                                    onClick={() => this.submitEdit(index)}>Done
+                                                </Button>
+                                            </div>
+                                            <br/>
+                                            <Button className="meal-delete" variant="warning"
+                                                onClick={() => this.deleteMeal(index)}>Delete
+                                            </Button>
+                                    </form> 
+                                )}
+                            </div>                    
+                        ))}
+                    </Col>
+                </Row>
+                <Row className="meal-bottomImgs">
+                    <Col lg={1}></Col>
+                    <Col lg={2}><Image width={150} height={150} src="https://i.postimg.cc/Kcf4HNyn/luke-michael-1c-WZgn-Bh-ZRs-unsplash200.png" by Luke Michael on Unsplash roundedCircle /></Col>
+                    <Col lg={2}><Image width={150} height={150} src="https://i.postimg.cc/HnRHXjfk/likemeat-Cb-NAux-SZTFo-unsplash.jpg" rounded Photo by LikeMeat on Unsplash/></Col>
+                    <Col lg={2}><Image width={150} height={150} src="https://i.postimg.cc/T3d4dTyy/brooke-lark-oaz0rays-ASk-unsplash.jpg" Photo by Brooke Lark on Unsplash roundedCircle/></Col>
+                    <Col lg={2}><Image width={150} height={150} src="https://i.postimg.cc/vTWGsG4q/alison-marras-4zm5e0-Zg-Yj-E-unsplash.jpg" rounded Photo by Alison Marras on Unsplash/></Col>
+                    <Col lg={2}><Image width={150} height={150} src="https://i.postimg.cc/P5FbZHqF/nica-cn-Hl-Wz-U-v-Ldf-U-unsplash.jpg" roundedCircle Photo by Nica Cn on Unsplash/></Col>
+                    <Col lg={1}></Col>
+                </Row>
+                
+            </Container>
         );
     }
 

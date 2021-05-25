@@ -1,38 +1,38 @@
 li:first-child .text {
-    background-color: red;
+    background-color: #B4000F;
 }
 li:nth-child(2) .text {
-    background-color: orange;
+    background-color: #AF672D;
 }
 li:nth-child(3) .text {
-    background-color: yellow;
+    background-color: #E4b455;
 }
 li:nth-child(4) .text {
-    background-color: green;
+    background-color: #597718;
 }
 li:nth-child(5) .text {
-    background-color: blue;
+    background-color: #90a74C;
 }
 li:nth-child(6) .text {
-    background-color: blueviolet;
+    background-color: #770d15;
 }
 li:nth-child(7) .text {
-    background-color: red;
+    background-color: #B4000F;
 }
 li:nth-child(8) .text {
-    background-color: orange;
+    background-color: #AF672D;
 }
 li:nth-child(9) .text {
-    background-color: yellow;
+    background-color: #E4b455;
 }
 li:nth-child(10) .text {
-    background-color: green;
+    background-color: #597718;
 }
 li:nth-child(11) .text {
-    background-color: blue;
+    background-color: #90a74C;
 }
 li:nth-child(12) .text {
-    background-color: blueviolet;
+    background-color: #770d15;
 }
 
 li:first-child {
@@ -101,6 +101,7 @@ li {
     transform: skewY(60deg) rotate(15deg);
     padding-top: 20px;
     cursor: pointer;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
     font-weight: bold;
     font-size: 18px;
 }
@@ -120,7 +121,7 @@ li {
     left: 40%;
     width: 120px;
     height: 40px;
-    background-color: blue;
+    background-color: #597718;
     border-radius: 30px;
     margin-top: 20px;
     cursor: pointer;

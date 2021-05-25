@@ -1,14 +1,104 @@
+* {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  
+}
+
 body {
   padding-top: 70px;
   padding-bottom: 70px;
 }
 
 .wheel-categories {
-  width: 150px;
+  width: 325px;
+  text-align: left;
+  padding: 5px;
+  align-content: center;
+  justify-content: center; 
+  color: #58483a; 
+  background: #F9EEC9;
+  border-radius: 3px;
+}
+
+.wheel-decider {
+  align-content: center;
+  justify-content: center; 
+  position: relative;
+}
+
+.home-cards {
+  align-content: center;
+  justify-content: center;
+  color: #58483a;  
+}
+
+.meal-form {
+  width: 325px;
+  text-align: left;
+  padding: 10px;
+  align-content: center;
+  justify-content: center; 
+  padding-top: 10px;
+  color: #58483a; 
+  background: #F9EEC9;
+  border-radius: 3px;
+  border: groove;
+  overflow: auto;
+}
+
+.meals-layout {
+  display: flex;
+  flex-wrap: wrap;
+  column-count: 5;
+  column-gap: 10px;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.meal {
+  border: solid black;
+  width: 200px;
+  height: 200px;
+  break-after: auto;
+  color: #58483a; 
+  background: #F9EEC9;
+  border-radius: 3px;
+  border: inset;
+  padding: 10px;
+  overflow: auto;
+}
+
+.meal-delete {
+  position: sticky;
   
 }
 
-.list-items {
-  width: 150px;
-  
+.meal-bottomImgs {
+  padding: 20px;
+}
+
+.journal-form {
+  width: 325px;
+  text-align: left;
+  padding: 10px;
+  align-content: center;
+  justify-content: center; 
+  padding-top: 10px;
+  color: #58483a; 
+  background: #F9EEC9;
+  border-radius: 3px;
+  border: groove;
+  overflow: auto;
+}
+
+.journal-entry {
+  border: solid black;
+  width: 200px;
+  height: 200px;
+  break-after: auto;
+  color: #58483a; 
+  background: #F9EEC9;
+  border-radius: 3px;
+  border: inset;
+  padding: 10px;
+  overflow: auto;
 }

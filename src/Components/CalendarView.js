@@ -14,7 +14,7 @@ export default function CalendarView(date) {
     
     return (
         <>
-            <Calendar
+            <Calendar 
                 value={dateState}
                 onChange={changeDate}
             />
