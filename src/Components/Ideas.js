@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Container, Row, Col, Image } from 'react-bootstrap';
+import { Button, Container, Row, Image } from 'react-bootstrap';
 
 export default class Ideas extends Component {
   state = {
@@ -64,19 +64,22 @@ export default class Ideas extends Component {
   render() {
     return (
       <Container fluid style={{background:"#886839"}}>
-        
         <Row>
-        <div className="journal-form">
-          <h1>Food Journal</h1>
-          <textarea 
-            onChange={event => this.setState({ currentNote: event.target.value })}
-            value={this.state.currentNote}
-            className="input" 
-            placeholder="Notes" 
-          />
-          <br/>
-          <Button className="Button" onClick={this.addNote} variant="secondary">Submit</Button>
-          <div>
+          <div className="journal-form">
+            <h1>Food Journal</h1>
+            <textarea 
+              onChange={event => this.setState({ currentNote: event.target.value })}
+              value={this.state.currentNote}
+              className="input" 
+              placeholder="Notes" 
+            />
+            <br/>
+            <Button className="Button" onClick={this.addNote} variant="secondary">Submit</Button>
+          </div>
+          <Image width={150} height={150} src="https://i.postimg.cc/Kcf4HNyn/luke-michael-1c-WZgn-Bh-ZRs-unsplash200.png" by Luke Michael on Unsplash roundedCircle />
+        </Row>
+        <Row>
+          <div className="journal-layout">
             {this.state.notes.map((note, index) => (
                 <div className="journal-entry" key={index}>
                   {this.state.noteEditing === null ||
@@ -84,29 +87,30 @@ export default class Ideas extends Component {
                     <div className="note">
                       <div className="note-content">
                         <div className="note-text">{note}</div>
-                        <Button onClick={() => this.setNoteEditing(index)} variant="success">Edit</Button>
+                        <Button onClick={() => this.setNoteEditing(index)} className="edit" variant="success">Edit</Button>
                       </div>
-                      <Button onClick={() =>this.deleteNote(index)} variant="warning">Delete</Button>
+                      <br/>
+                      <Button onClick={() =>this.deleteNote(index)} className="delete" variant="warning">Delete</Button>
                     </div>
                   ) : (
                     <div className="note">
                       <div className="note-content">
                         <input
-                          type="text"
+                          type="textarea"
                           value={this.state.currentEdit}
                           onChange={event => this.editNote(event)}
                         />
-                        <Button onClick={() => this.submitEdit(index)} variant="success">Done</Button>
+                        <Button onClick={() => this.submitEdit(index)} className="edit" variant="success">Done</Button>
                       </div>
-                      <Button onClick={() =>this.deleteNote(index)} variant="warning">Delete</Button>
+                      <br/>
+                      <Button onClick={() =>this.deleteNote(index)} className="delete" variant="warning">Delete</Button>
                     </div>
                   )}
                 </div>
               ))
             }
           </div>
-        </div>
-      </Row>
+        </Row>
       </Container>
     );
   }  

@@ -4,8 +4,8 @@
 }
 
 body {
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 56px;
+  padding-bottom: 56px;
 }
 
 .wheel-categories {
@@ -67,7 +67,7 @@ body {
   overflow: auto;
 }
 
-.meal-delete {
+.delete {
   position: sticky;
   
 }
@@ -77,28 +77,48 @@ body {
 }
 
 .journal-form {
-  width: 325px;
+  width: 500px;
   text-align: left;
   padding: 10px;
   align-content: center;
   justify-content: center; 
   padding-top: 10px;
-  color: #58483a; 
-  background: #F9EEC9;
+  color: whitesmoke;
+  text-shadow: #474747 3px 5px 2px; 
+  background: #886839;
   border-radius: 3px;
-  border: groove;
   overflow: auto;
+}
+
+.input{
+  width: 400px;
+  height: 250px;
+  text-align: left;
+  padding: 10px;
+  align-content: center;
+  justify-content: center; 
+  padding-top: 10px;
 }
 
 .journal-entry {
   border: solid black;
-  width: 200px;
+  width: 350px;
   height: 200px;
   break-after: auto;
-  color: #58483a; 
+  color: #58483A; 
   background: #F9EEC9;
   border-radius: 3px;
   border: inset;
   padding: 10px;
   overflow: auto;
 }
+
+.journal-layout {
+  display: flex;
+  flex-wrap: wrap;
+  column-count: 5;
+  column-gap: 10px;
+  justify-content: space-around;
+  align-content: space-around;
+}
+

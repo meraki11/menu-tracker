@@ -88,11 +88,11 @@ export default class MenuForm extends Component {
                                     <div className="meal">
                                         <div className="meal-content">
                                             <div className="meal-text">{meal}</div>
-                                            <Button className="meal-edit" variant="success" 
+                                            <Button className="edit" variant="success" 
                                                 onClick={() => this.setMealEditing(index)}>Edit</Button>
                                         </div>
                                         <br/>
-                                        <Button className="meal-delete" variant="warning"
+                                        <Button className="delete" variant="warning"
                                             onClick={() => this.deleteMeal(index)}>Delete</Button>
                                     </div>
                                 ) : (
@@ -102,12 +102,12 @@ export default class MenuForm extends Component {
                                                     value={this.state.currentEdit}
                                                     onChange={event => this.editMeal(event)}
                                                 />
-                                                <Button className="meal-edit" variant="success" 
+                                                <Button className="edit" variant="success" 
                                                     onClick={() => this.submitEdit(index)}>Done
                                                 </Button>
                                             </div>
                                             <br/>
-                                            <Button className="meal-delete" variant="warning"
+                                            <Button className="delete" variant="warning"
                                                 onClick={() => this.deleteMeal(index)}>Delete
                                             </Button>
                                     </form> 

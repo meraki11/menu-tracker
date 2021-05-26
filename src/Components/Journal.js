@@ -12,7 +12,7 @@ export default class Journal extends Component {
                         <Col lg={9}>
                             <Ideas />
                         </Col>
-                        <Col lg={3} style={{background: '#886839', justifyContent: 'center'}}>
+                        <Col lg={3} style={{background:'#886839'}}>
                             <CalendarView />
                         </Col>
                     </Row>

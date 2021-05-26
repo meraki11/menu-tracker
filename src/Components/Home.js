@@ -8,7 +8,7 @@ export default function Home() {
   const history = useHistory();
   return (
     <>
-      <Container fluid style={{background:"#D3B786", }}>
+      <Container fluid style={{background:"#D3B786",color: '#58483A'}}>
         <Row>
           <h3>What's for dinner?...or breakfast, lunch, snack...</h3>
         </Row>
