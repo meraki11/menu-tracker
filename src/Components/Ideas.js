@@ -80,9 +80,9 @@ export default class Ideas extends Component {
             </div>
           </Col>
           <Col lg={1}></Col>
-          <Col lg={5} className="quote-image"><Image width={600} src="https://i.postimg.cc/8cyqNL8H/this-magical-marvelous-food-on-resize.jpg" 
+          <Col lg={5} className="quote-image"><Image width={600} rounded src="https://i.postimg.cc/8cyqNL8H/this-magical-marvelous-food-on-resize.jpg" 
             alt="Quote 'This magical, marvelous food on our plate, this sustenance we absorb, has a story to tell. It has a journey. by Joel Salatin' 
-            over photo of group meal at a dining table, Photo by Jay Wennington on Unsplash rounded"/></Col>
+            over photo of group meal at a dining table, Photo by Jay Wennington on Unsplash" /></Col>
           <Col lg={3} className="calendar"><CalendarView /></Col>
         </Row>
         <Row>

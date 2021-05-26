@@ -2,6 +2,8 @@ import React from 'react';
 import './WheelDecider.css';
 import { Button } from 'react-bootstrap';
 
+//spinner tutorial by Tech Teach https://youtu.be/2plnsl8P2zE
+
 export default class WheelDecider extends React.Component {
   state = {
     name: "circle"
