@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Container, Row, Image } from 'react-bootstrap';
+import { Button, Container, Col, Row, Image } from 'react-bootstrap';
+import CalendarView from './CalendarView';
 
 export default class Ideas extends Component {
   state = {
@@ -65,18 +66,24 @@ export default class Ideas extends Component {
     return (
       <Container fluid style={{background:"#886839"}}>
         <Row>
-          <div className="journal-form">
-            <h1>Food Journal</h1>
-            <textarea 
-              onChange={event => this.setState({ currentNote: event.target.value })}
-              value={this.state.currentNote}
-              className="input" 
-              placeholder="Notes" 
-            />
-            <br/>
-            <Button className="Button" onClick={this.addNote} variant="secondary">Submit</Button>
-          </div>
-          <Image width={150} height={150} src="https://i.postimg.cc/Kcf4HNyn/luke-michael-1c-WZgn-Bh-ZRs-unsplash200.png" by Luke Michael on Unsplash roundedCircle />
+          <Col lg={3}>
+            <div className="journal-form">
+              <h1>Food Journal</h1>
+              <textarea 
+                onChange={event => this.setState({ currentNote: event.target.value })}
+                value={this.state.currentNote}
+                className="input" 
+                placeholder="Notes" 
+              />
+              <br/>
+              <Button className="Button" onClick={this.addNote} variant="secondary">Submit</Button>
+            </div>
+          </Col>
+          <Col lg={1}></Col>
+          <Col lg={5} className="quote-image"><Image width={600} src="https://i.postimg.cc/L5w0yQ4f/this-magical-marvelous-food-on.jpg" 
+            alt="Quote 'This magical, marvelous food on our plate, this sustenance we absorb, has a story to tell. It has a journey. by Joel Salatin' 
+            over photo of group meal at a dining table, Photo by Jay Wennington on Unsplash rounded"/></Col>
+          <Col lg={3} className="calendar"><CalendarView /></Col>
         </Row>
         <Row>
           <div className="journal-layout">
@@ -95,8 +102,7 @@ export default class Ideas extends Component {
                   ) : (
                     <div className="note">
                       <div className="note-content">
-                        <input
-                          type="textarea"
+                        <textarea
                           value={this.state.currentEdit}
                           onChange={event => this.editNote(event)}
                         />

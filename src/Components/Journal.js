@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Ideas from './Ideas';
-import { Container, Row, Col, Image } from 'react-bootstrap/';
-import CalendarView from './CalendarView';
+import { Container, Row, Col } from 'react-bootstrap/';
+
 
 export default class Journal extends Component {
     render() {
@@ -9,15 +9,12 @@ export default class Journal extends Component {
             <>
                 <Container fluid>
                     <Row>
-                        <Col lg={9}>
+                        <Col lg={12}>
                             <Ideas />
-                        </Col>
-                        <Col lg={3} style={{background:'#886839'}}>
-                            <CalendarView />
                         </Col>
                     </Row>
                 </Container>
             </>
         );
-    }s
+    }
 }

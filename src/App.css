@@ -1,11 +1,11 @@
 * {
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-  
 }
 
 body {
   padding-top: 56px;
   padding-bottom: 56px;
+  margin: 0;
 }
 
 .wheel-categories {
@@ -28,21 +28,31 @@ body {
 .home-cards {
   align-content: center;
   justify-content: center;
-  color: #58483a;  
+  color: #58483a;
+  padding-bottom: 20px;  
 }
 
 .meal-form {
-  width: 325px;
+  width: 300px;
+  height: 250px;
   text-align: left;
   padding: 10px;
-  align-content: center;
-  justify-content: center; 
-  padding-top: 10px;
+  align-content: space-around;
+  justify-content: space-around; 
   color: #58483a; 
   background: #F9EEC9;
   border-radius: 3px;
   border: groove;
   overflow: auto;
+  position: relative;
+  left: 10px;
+}
+
+.meal-quote {
+  width: 450px;
+  position: relative;
+  left: 70px;
+  padding-bottom: 20px;
 }
 
 .meals-layout {
@@ -52,6 +62,8 @@ body {
   column-gap: 10px;
   justify-content: space-around;
   align-content: space-around;
+  row-gap: 10px;
+  padding-bottom: 10px;
 }
 
 .meal {
@@ -65,15 +77,6 @@ body {
   border: inset;
   padding: 10px;
   overflow: auto;
-}
-
-.delete {
-  position: sticky;
-  
-}
-
-.meal-bottomImgs {
-  padding: 20px;
 }
 
 .journal-form {
@@ -92,12 +95,13 @@ body {
 
 .input{
   width: 400px;
-  height: 250px;
+  height: 225px;
   text-align: left;
   padding: 10px;
   align-content: center;
   justify-content: center; 
   padding-top: 10px;
+  border-radius: 3px;
 }
 
 .journal-entry {
@@ -120,5 +124,15 @@ body {
   column-gap: 10px;
   justify-content: space-around;
   align-content: space-around;
+  row-gap: 10px;
+  padding-bottom: 10px;
 }
 
+.quote-image {
+  padding-top: 20px;
+}
+
+.calendar {
+  padding-top: 20px;
+  padding-left: 10px;
+}

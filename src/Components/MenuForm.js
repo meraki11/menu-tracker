@@ -60,27 +60,35 @@ export default class MenuForm extends Component {
     render() {
         return (
             <Container fluid style={{background:"#E4B455"}}>
-                
                 <br/>
                 <Row>
-                    <Col lg={3}>
-                        <Form className="meal-form">
-                            <Form.Group>
-                                <Form.Label>Meal Idea: </Form.Label>
-                                <Form.Control
-                                    onChange={event => this.setState({ currentMeal: event.target.value})}
-                                    value={this.state.currentMeal}
-                                    as="textarea"
-                                    rows={10}
-                                    name="mealName"
-                                    placeholder="Meal Details Here"
-                                />
-                                <Button onClick={this.addMeal} variant="secondary" block>Add Meal</Button>
-                            </Form.Group>
-                        </Form>
+                    <Col lg={4}>
+                        <Row>
+                            <Form className="meal-form">
+                                <Form.Group>
+                                    <Form.Label>Meal Idea: </Form.Label>
+                                    <Form.Control
+                                        onChange={event => this.setState({ currentMeal: event.target.value})}
+                                        value={this.state.currentMeal}
+                                        as="textarea"
+                                        rows={5}
+                                        name="mealName"
+                                        placeholder="Meal Details Here"
+                                    />
+                                    <Button onClick={this.addMeal} variant="secondary" block>Add Meal</Button>
+                                </Form.Group>
+                            </Form>
+                        </Row>
                         <br />
+                        <Row className="meal-quote">
+                            <Image width={300} src="https://i.postimg.cc/JhvjWZX3/this-is-my-invariable-advice.jpg" rounded
+                            alt="Quote 'This is my invariable advice to people: learn how to cook- tyr new recipes, 
+                            learn from your mistakes, be fearless, and above all have fun! by Julia Child' 
+                            over image of pots and pans with spaghetti and sauce raw ingredients on cyan background, 
+                            Photo by Icons8 Team on Unsplash"/>
+                        </Row>
                     </Col>
-                    <Col lg={9} className="meals-layout">
+                    <Col lg={8} className="meals-layout">
                         {this.state.meals.map((meal, index) => (
                             <div className="meals" key={index}>
                                 {this.state.mealEditing === null ||
@@ -116,16 +124,6 @@ export default class MenuForm extends Component {
                         ))}
                     </Col>
                 </Row>
-                <Row className="meal-bottomImgs">
-                    <Col lg={1}></Col>
-                    <Col lg={2}><Image width={150} height={150} src="https://i.postimg.cc/Kcf4HNyn/luke-michael-1c-WZgn-Bh-ZRs-unsplash200.png" by Luke Michael on Unsplash roundedCircle /></Col>
-                    <Col lg={2}><Image width={150} height={150} src="https://i.postimg.cc/HnRHXjfk/likemeat-Cb-NAux-SZTFo-unsplash.jpg" rounded Photo by LikeMeat on Unsplash/></Col>
-                    <Col lg={2}><Image width={150} height={150} src="https://i.postimg.cc/T3d4dTyy/brooke-lark-oaz0rays-ASk-unsplash.jpg" Photo by Brooke Lark on Unsplash roundedCircle/></Col>
-                    <Col lg={2}><Image width={150} height={150} src="https://i.postimg.cc/vTWGsG4q/alison-marras-4zm5e0-Zg-Yj-E-unsplash.jpg" rounded Photo by Alison Marras on Unsplash/></Col>
-                    <Col lg={2}><Image width={150} height={150} src="https://i.postimg.cc/P5FbZHqF/nica-cn-Hl-Wz-U-v-Ldf-U-unsplash.jpg" roundedCircle Photo by Nica Cn on Unsplash/></Col>
-                    <Col lg={1}></Col>
-                </Row>
-                
             </Container>
         );
     }
